@@ -1,0 +1,118 @@
+.container {
+  /* background-color: rebeccapurple; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  border: 0.5px solid rgba(1, 8, 235, 1);
+  border-radius: 0px;
+  background-color: #0c0c0c;
+  /* background-image: radial-gradient( rgb(1,0,240,0.5),#fff, rgba(1,0,240, 0.5)); */
+  /* box-shadow: 20px 20px 20px 0 rgba(0,0,0), -8px -8px 15px 0 rgba(1,8,235,0.9); */
+  box-shadow: 10px 10px rgba(1, 8, 235, 0.9);
+}
+.formGroups {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+.formGroups > input {
+  outline: none;
+  width: 95%;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  background-color: #0c0c0c;
+  margin-top: 10px;
+  /* color: #0c0c0c; */
+  /* height: 20px; */
+  padding: 10px;
+  display: block;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0px;
+  transition: 0.5s ease-out;
+}
+
+.formGroups > input:hover,
+.formGroups > input:focus {
+  border-bottom: 1px solid rgba(255, 255, 255);
+}
+
+.formGroups > label {
+  /* margin-top: 10px; */
+  /* margin-left: 10px; */
+  font-weight: 500;
+  font-size: larger;
+}
+
+.submit {
+  cursor: pointer;
+  outline: none;
+  color: #0c0c0c;
+  width: 30%;
+  height: 30px;
+  border-radius: 1px;
+  border: 0.5px solid rgba(1, 8, 235, 1);
+  font-size: medium;
+  font-weight: 500;
+  align-self: center;
+  padding: 5px;
+  transition: 0.3s ease-out;
+  /* box-shadow: 20px 20px 20px 0 rgba(0,0,0), -5px -3px 10px 0 rgba(255,255,255,0.5); */
+  box-shadow: 5px 5px rgba(1, 8, 235, 0.9);
+}
+
+.submit:hover {
+  transform: scale(1.1);
+}
+
+.desc {
+  overflow: auto;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  resize: none;
+  margin-top: 10px;
+  padding: 10px;
+  outline: none;
+  background-color: #0c0c0c;
+  color: white;
+  display: block;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  height: 2.5rem;
+  transition: 0.5s ease-out;
+}
+
+.desc:focus,
+.desc:hover {
+  border-bottom: 1px solid rgba(255, 255, 255);
+}
+
+.desc::-webkit-scrollbar {
+  width: 1em;
+}
+
+.desc::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+}
+
+.desc::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5);
+  /* outline: 1px solid slategrey; */
+  border-radius: 20px;
+}

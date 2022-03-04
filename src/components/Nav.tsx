@@ -30,13 +30,13 @@ const Nav = () => {
 	return (
 		<nav>
 			<Link href="/" passHref>
-				<a className={styles.logo}>T</a>
+				<a className={styles.logo}>Tribes</a>
 			</Link>
 			<div className={styles.rightNav}>
-				<Link href="/battle">
+				{/* <Link href="/battle">
                     Battle
-				</Link>
-				<Link href="https://docs.hyperverse.dev/" passHref>
+				</Link> */}
+				<Link href="/about" passHref>
 					<a target="_blank" rel="noreferrer">
 						About
 					</a>
