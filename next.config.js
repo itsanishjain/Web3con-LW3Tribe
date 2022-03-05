@@ -9,6 +9,6 @@ const withTM = require('next-transpile-modules')([
 module.exports = withTM({
 	reactStrictMode: true,
 	images: {
-		domains: ['siasky.net', 'fileportal.org'],
+		domains: ['siasky.net', 'fileportal.org', 'https://ipfs.io'],
 	},
 });
