@@ -108,6 +108,7 @@ export default function Form() {
     );
     console.log("Metadata", metadata.url);
     await addPost(metadata.url, 0);
+    console.log("Metadata", metadata.url);
 
     setLoading(false);
   };
