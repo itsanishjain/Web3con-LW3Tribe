@@ -37,7 +37,7 @@ const Nav = (props) => {
                     Battle
 				</Link> */}
 				<Link href="/about" passHref>
-					<a target="_blank" rel="noreferrer">
+					<a  rel="noreferrer">
 						About
 					</a>
 				</Link>
