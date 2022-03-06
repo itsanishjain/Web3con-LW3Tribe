@@ -82,7 +82,9 @@ export default function PostCard({ tribeId }) {
   };
 
   const boxStyle = {
-    border: "1px solid white",
+    width: "60%",
+    margin: "0 auto",
+    // border: "1px solid white",
     borderRadius: "5px",
     padding: "1rem",
     marginTop: "5rem",
