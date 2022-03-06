@@ -7,8 +7,8 @@ import axios from 'axios'
 
 export default function PostCard() {
   const [posts, setPosts] = useState([]);
-  const[postResults,setPostResults] = useState([]);
-  
+  const [postResults, setPostResults] = useState();
+
   const [loading, setLoading] = useState(false);
 
 
@@ -17,8 +17,6 @@ export default function PostCard() {
   }, []);
 
   const results = [];
-
-
 
   const fetchAllPosts = async () => {
     const provider = new providers.Web3Provider(window.ethereum);
@@ -30,7 +28,14 @@ export default function PostCard() {
     const posts = await DCContract.allPosts();
     console.log(posts);
     setPosts(posts);
-    fetchDataFromIPFS(posts[7].metadateURL);
+    const totalPosts = posts.length;
+    setLoading(true);
+    for (let i = 4; i < totalPosts; i++) {
+      await fetchDataFromIPFS(posts[i].metadateURL);
+    }
+    console.log("RESULTS>>>>>>>>>", results);
+    setPostResults(results);
+    setLoading(false);
   };
 
 
@@ -57,8 +62,17 @@ export default function PostCard() {
       const data = await response.json();
       const imageURl = ipfsImageUrlToHttpUrl(data.image);
 
-      console.log("Metadata", metadataURL);
-      console.log("IMAGE_URL", imageURl);
+      const post = {
+        title: data.name,
+        description: data.description,
+        image: imageURl,
+        metadataURL: metadataURL
+      }
+      results.push(post);
+      // setPostResults(results);
+
+      // console.log("Metadata", metadataURL);
+      // console.log("IMAGE_URL", imageURl);
 
     } catch (error) {
       console.log("ERROR", error);
@@ -73,7 +87,29 @@ export default function PostCard() {
     backgroundColor: "rgba(0,0,0,0.5)",
   };
 
+  const postBox = {
+    borderBottom: "1px solid white",
+    maxWidth:"60%",
+    margin: "0 auto",
+    display:"flex",
+    flexDirection:"column",
+    alignItems:"center",
+    padding:"10px"
+  }
+
   return <div style={boxStyle}>
     PostCard
+    {
+      !loading ? postResults && postResults.map((post, index) => {
+        return <div style={postBox} key={index}>
+          <h1>{post.title}</h1>
+          <img style={{ width: "50%", height: "100%" }} src={post.image} alt="" />
+          <p>{post.description}</p>
+        </div>
+      }) : <div className="loader-center">
+        <div className="loader"></div>
+      </div>
+    }
+
   </div>;
 }
