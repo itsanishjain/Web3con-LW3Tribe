@@ -41,7 +41,39 @@ const TribesPage = () => {
   }, [error]);
   return (
     <main>
-      <Nav />
+      <Nav>
+     {/*  <Link href={`/create-post/?tribeId=` + data.id}>
+            <a
+              style={{
+                width:"30%",
+                border: "1px solid white",
+                borderRadius: "5px",
+                padding: "10px",
+                display: "flex",
+                justifyContent: "center",
+                fontSize: "0.8rem",
+                fontWeight: "bold",
+                // marginBottom: "1rem",
+                fontFamily: "Press Start 2P",
+                textDecoration: "none",
+              }}
+            >
+              Create Post
+            </a>
+          </Link> */}
+           <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  // paddingBottom: "100px",
+                }}
+              >
+                <button className={styles.join1} onClick={() => mutate()}>
+                  Leave Tribe
+                </button>
+                
+              </div>
+      </Nav>
       {isLoading ? (
         <Loader loaderMessage="Processing..." />
       ) : account && !tribeErr && data ? (
@@ -65,33 +97,18 @@ const TribesPage = () => {
               <div className={styles.text}>
                 <h1>{data.name}</h1>
                 <p className={styles.description}>{data.description}</p>
-              </div>
-
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  paddingBottom: "100px",
-                }}
-              >
-                <button className={styles.join} onClick={() => mutate()}>
-                  Leave Tribe
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <Link href={`/create-post/?tribeId=` + data.id}>
+                <Link href={`/create-post/?tribeId=` + data.id}>
             <a
               style={{
+                width:"30%",
                 border: "1px solid white",
                 borderRadius: "5px",
                 padding: "10px",
                 display: "flex",
                 justifyContent: "center",
-                fontSize: "2rem",
+                fontSize: "0.8rem",
                 fontWeight: "bold",
-                marginBottom: "1rem",
+                // marginBottom: "1rem",
                 fontFamily: "Press Start 2P",
                 textDecoration: "none",
               }}
@@ -99,6 +116,14 @@ const TribesPage = () => {
               Create Post
             </a>
           </Link>
+              </div>
+              
+             
+              
+            </div>
+          </div>
+
+          
 
           <PostCard tribeId={data.id} />
         </>

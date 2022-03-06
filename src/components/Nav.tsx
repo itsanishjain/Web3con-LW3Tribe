@@ -17,7 +17,7 @@ const shortenHash = (hash: string = '', charLength: number = 6, postCharLength?:
 	return shortendHash;
 };
 
-const Nav = () => {
+const Nav = (props) => {
 	const { address, disconnect, connect, error } = useEthereum();
 
 	useEffect(() => {
@@ -48,6 +48,7 @@ const Nav = () => {
 						<span>{shortenHash(address, 5, 5)}</span>
 					</button>
 				)}
+				{props.children}
 			</div>
 		</nav>
 	);
