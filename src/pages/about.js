@@ -76,7 +76,7 @@ export default function About() {
             </div>
           </div>
         </div>
-      <span className={styles.wagmi}>#WAGMI 🚀</span>
+        <span className={styles.head2}>#WAGMI! 🚀</span>
       </div>
     </main>
   );

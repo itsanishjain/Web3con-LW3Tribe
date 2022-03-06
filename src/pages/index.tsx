@@ -41,7 +41,7 @@ const Home: NextPage = () => {
 					<div className={styles.header}>
 						<h1> Web3Tribes</h1>
 						<p className={styles.about}>
-							Web3Tribes allows you to join communities and find with common interests and goals
+							Web3Tribes allows you to join communities and find with common interests and goals. 🔥
 						</p>
 						{address ? (
 							!data ? (
