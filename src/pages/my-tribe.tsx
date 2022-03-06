@@ -81,7 +81,7 @@ const TribesPage = () => {
             </div>
           </div>
 
-          <Link href="/create-post">
+          <Link href={`/create-post/?tribeId=` + data.id}>
             <a
               style={{
                 border: "1px solid white",
@@ -94,14 +94,13 @@ const TribesPage = () => {
                 marginBottom: "1rem",
                 fontFamily: "Press Start 2P",
                 textDecoration: "none",
-                
               }}
             >
               Create Post
             </a>
           </Link>
 
-          <PostCard />
+          <PostCard tribeId={data.id} />
         </>
       ) : (
         account &&

@@ -30,12 +30,9 @@ const Nav = () => {
 	return (
 		<nav>
 			<Link href="/" passHref>
-				<a className={styles.logo}>Tribes</a>
+				<a className={styles.logo}>Web3-Tribes</a>
 			</Link>
 			<div className={styles.rightNav}>
-				{/* <Link href="/battle">
-                    Battle
-				</Link> */}
 				<Link href="/about" passHref>
 					<a target="_blank" rel="noreferrer">
 						About

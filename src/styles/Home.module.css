@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500&display=swap');
 
 .logo {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 
 .rightNav {
@@ -97,6 +97,7 @@
 }
 
 .join {
+ 
   font-family: 'Press Start 2P';
   cursor: pointer;
   margin-top: 1rem;
@@ -169,6 +170,8 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  /* border: 1px solid red; */
+  /* width: 100%; */
   
 }
 
@@ -178,10 +181,12 @@
 }
 
 .cards {
+  margin: 50px;
   cursor: pointer;
   width: 200px;
   height: 290px;
   overflow: hidden;
+ 
 }
 
 .cards:hover {

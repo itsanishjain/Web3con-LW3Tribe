@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 import axios from 'axios'
 
-export default function PostCard() {
+export default function PostCard({ tribeId }) {
   const [posts, setPosts] = useState([]);
   const [postResults, setPostResults] = useState();
 
@@ -26,15 +26,22 @@ export default function PostCard() {
       provider
     );
     const posts = await DCContract.allPosts();
-    console.log(posts);
+
+    console.log("FADSFADSF",posts)
     setPosts(posts);
     const totalPosts = posts.length;
     setLoading(true);
-    for (let i = 4; i < totalPosts; i++) {
-      await fetchDataFromIPFS(posts[i].metadateURL);
+    for (let i = 0; i < totalPosts; i++) {
+      await fetchDataFromIPFS(posts[i].metadateURL, posts[i].tribe);
     }
-    console.log("RESULTS>>>>>>>>>", results);
-    setPostResults(results);
+    console.log("RESULTS", tribeId, results);
+
+    tribeId--;
+
+    const filterResults = results.filter((item) => {
+      return item.tribeId === tribeId
+    })
+    setPostResults(filterResults);
     setLoading(false);
   };
 
@@ -54,26 +61,21 @@ export default function PostCard() {
   }
 
 
-  const fetchDataFromIPFS = async (_postMetadataURL) => {
+  const fetchDataFromIPFS = async (_postMetadataURL, _tribeId) => {
     try {
-      console.log('_postMetadataURL', _postMetadataURL)
       const metadataURL = ipfsMetadataUrlToHttpUrl(_postMetadataURL);
       const response = await fetch(metadataURL);
       const data = await response.json();
       const imageURl = ipfsImageUrlToHttpUrl(data.image);
 
       const post = {
+        tribeId: _tribeId,
         title: data.name,
         description: data.description,
         image: imageURl,
         metadataURL: metadataURL
       }
       results.push(post);
-      // setPostResults(results);
-
-      // console.log("Metadata", metadataURL);
-      // console.log("IMAGE_URL", imageURl);
-
     } catch (error) {
       console.log("ERROR", error);
     }
@@ -89,26 +91,30 @@ export default function PostCard() {
 
   const postBox = {
     borderBottom: "1px solid white",
-    maxWidth:"60%",
+    maxWidth: "60%",
     margin: "0 auto",
-    display:"flex",
-    flexDirection:"column",
-    alignItems:"center",
-    padding:"10px"
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    padding: "10px"
   }
 
   return <div style={boxStyle}>
-    PostCard
+    {postResults && postResults.length == 0 ? "NO POSTS YET" : null}
     {
       !loading ? postResults && postResults.map((post, index) => {
-        return <div style={postBox} key={index}>
-          <h1>{post.title}</h1>
-          <img style={{ width: "50%", height: "100%" }} src={post.image} alt="" />
-          <p>{post.description}</p>
+        return (
+          <div style={postBox} key={index}>
+            <h1>{post.title}</h1>
+            <img style={{ width: "50%", height: "100%" }} src={post.image} alt="" />
+            <p>{post.description}</p>
+          </div>
+        )
+      }) : (
+        <div className="loader-center">
+          <div className="loader"></div>
         </div>
-      }) : <div className="loader-center">
-        <div className="loader"></div>
-      </div>
+      )
     }
 
   </div>;

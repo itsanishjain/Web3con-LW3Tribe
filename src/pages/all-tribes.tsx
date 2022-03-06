@@ -54,10 +54,10 @@ const AllTribes = () => {
               </>
             ) : (
               <>
-                <h5>Select Your Tribe</h5>
+                <h5>Select Your Tribe </h5>
                 <div className={styles.allTribes}>
                   {data.map((item) => (
-                    <div key={item.id} onClick={() => mutate(item.id)}>
+                    <div style={{marginRight:"30px"}} key={item.id} onClick={() => mutate(item.id)}>
                       <Image
                         width={200}
                         height={250}

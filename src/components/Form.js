@@ -4,10 +4,15 @@ import { nftDotStorage } from "../utils";
 import { Contract, providers } from "ethers";
 import { useEthereum } from "@decentology/hyperverse-ethereum";
 import { DC_CONTRACT_ADDRESS, DC_CONTRACT_ABI } from "../constants";
+import { toast } from "react-toastify";
 
-export default function Form() {
-  console.log(DC_CONTRACT_ADDRESS);
+import { useRouter } from "next/router";
+
+export default function Form({ tribeID }) {
   const { address } = useEthereum();
+  const router = useRouter();
+
+
 
   const [formValues, setFormValues] = useState({
     title: "",
@@ -17,8 +22,6 @@ export default function Form() {
   const [formErrors, setFormErrors] = useState({});
 
   const [loading, setLoading] = useState(false);
-
-  // const [posts, setPosts] = useState([]);
 
   const postTitle = {
     textAlign: "center",
@@ -34,21 +37,6 @@ export default function Form() {
     paddingBottom: "0.5rem",
   };
 
-  // useEffect(() => {
-  //   fetchAllPosts();
-  // }, []);
-
-  // const fetchAllPosts = async () => {
-  //   const provider = new providers.Web3Provider(window.ethereum);
-  //   const DCContract = new Contract(
-  //     DC_CONTRACT_ADDRESS,
-  //     DC_CONTRACT_ABI,
-  //     provider
-  //   );
-  //   const posts = await DCContract.allPosts();
-  //   console.log(posts);
-  //   setPosts(posts);
-  // };
 
   const addPost = async (metadata, tribeID) => {
     console.log("POST");
@@ -59,10 +47,10 @@ export default function Form() {
       DC_CONTRACT_ABI,
       signer
     );
-    // setLoading(true);
+
     const tx = await DCContract.addPost(metadata, tribeID);
     await tx.wait();
-    // setLoading(false);
+
   };
 
   // create a function which set the values of form field
@@ -89,9 +77,11 @@ export default function Form() {
     return errors;
   };
 
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("HERE");
+    console.log("Submitting Form");
 
     // check form values are not empty
     const errors = validateError();
@@ -99,18 +89,18 @@ export default function Form() {
       setFormErrors(errors);
       return;
     }
-    console.log("formValues", formValues);
     setLoading(true);
     const metadata = await nftDotStorage(
       formValues.image,
       formValues.title,
       formValues.description
     );
-    console.log("Metadata", metadata.url);
-    await addPost(metadata.url, 0);
-    console.log("Metadata", metadata.url);
+    await addPost(metadata.url, tribeID - 1);
 
     setLoading(false);
+    toast("Post added successfully");
+
+    router.push("/my-tribe");
   };
 
   return (

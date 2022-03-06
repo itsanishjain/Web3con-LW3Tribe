@@ -10,14 +10,12 @@ const nftDotStorage = async (img, name, description) => {
   try {
     var metadata;
     if (img !== "") {
-      console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
       metadata = await client.store({
         name: name,
         description: description,
         image: img,
       });
     } else {
-      console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
       metadata = await client.store({
         name: name,
         description: description,

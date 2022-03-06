@@ -1,4 +1,4 @@
-export const DC_CONTRACT_ADDRESS = "0x14d4dfE3e1AacF3c991ddFa91bF31aB35565d2E5";
+export const DC_CONTRACT_ADDRESS = "0x24B1546862b53f6D15fB58aDc00B5f09d6c88375";
 export const DC_CONTRACT_ABI = [
   {
     inputs: [],
