@@ -63,7 +63,7 @@ const Setup = () => {
 				<div className={styles.hero}>
 					{account && !data && (
 						<>
-							<button className={styles.join} type="submit" onClick={() => mutate()}>
+							<button className={styles.join1} style={{width: "12.5rem"}} type="submit" onClick={() => mutate()}>
 								Create Instance
 							</button>
 							<p className={styles.error}>
