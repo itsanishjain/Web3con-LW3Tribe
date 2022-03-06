@@ -80,7 +80,7 @@ export default function PostCard() {
   };
 
   const boxStyle = {
-    border: "1px solid white",
+    // border: "1px solid white",
     width: "60%",
     margin: "5rem auto 0 auto",
     borderRadius: "5px",

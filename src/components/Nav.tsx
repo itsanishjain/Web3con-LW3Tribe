@@ -17,7 +17,7 @@ const shortenHash = (hash: string = '', charLength: number = 6, postCharLength?:
 	return shortendHash;
 };
 
-const Nav = () => {
+const Nav = (props) => {
 	const { address, disconnect, connect, error } = useEthereum();
 
 	useEffect(() => {
@@ -42,6 +42,7 @@ const Nav = () => {
 					</a>
 				</Link>
 
+
 				{!address ? (
 					<button className={styles.connect} onClick={connect}>
 						Connect Wallet
@@ -51,6 +52,9 @@ const Nav = () => {
 						<span>{shortenHash(address, 5, 5)}</span>
 					</button>
 				)}
+
+				{props.children}
+
 			</div>
 		</nav>
 	);

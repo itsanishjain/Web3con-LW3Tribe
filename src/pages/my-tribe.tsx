@@ -41,7 +41,21 @@ const TribesPage = () => {
   }, [error]);
   return (
     <main>
-      <Nav />
+      <Nav>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            alignItems: "flex-end",
+            marginLeft: "25px"
+            // paddingBottom: "100px",
+          }}
+        >
+          <button className={styles.join} onClick={() => mutate()}>
+            Leave Tribe
+          </button>
+        </div>
+      </Nav>
       {isLoading ? (
         <Loader loaderMessage="Processing..." />
       ) : account && !tribeErr && data ? (
@@ -65,28 +79,46 @@ const TribesPage = () => {
               <div className={styles.text}>
                 <h1>{data.name}</h1>
                 <p className={styles.description}>{data.description}</p>
+                <Link href="/create-post">
+                  <a
+                    style={{
+                      width: "35%",
+                      border: "1px solid white",
+                      borderRadius: "5px",
+                      padding: "10px",
+                      display: "flex",
+                      justifyContent: "center",
+                      fontSize: "1.2rem",
+                      fontWeight: "bold",
+                      marginTop: "1.2rem",
+                      fontFamily: "Press Start 2P",
+                      textDecoration: "none",
+                    }}
+                  >
+                    Create Post
+                  </a>
+                </Link>
               </div>
 
-              <Link href="/create-post">
-              <a
-              style={{
-                width : "30%",
-                border: "1px solid white",
-                borderRadius: "5px",
-                padding: "10px",
-                display: "flex",
-                justifyContent: "center",
-                fontSize: "2rem",
-                fontWeight: "bold",
-                marginBottom: "1rem",
-                fontFamily: "Press Start 2P",
-                textDecoration: "none",
-                
-              }}
-            >
-              Create Post
-            </a>
-          </Link>
+              {/* <Link href="/create-post">
+                <a
+                  style={{
+                    width: "20%",
+                    border: "1px solid white",
+                    borderRadius: "5px",
+                    padding: "10px",
+                    display: "flex",
+                    justifyContent: "center",
+                    fontSize: "1.5rem",
+                    fontWeight: "bold",
+                    marginBottom: "1rem",
+                    fontFamily: "Press Start 2P",
+                    textDecoration: "none",
+                  }}
+                >
+                  Create Post
+                </a>
+              </Link> */}
 
               {/* <div
                 style={{
@@ -125,17 +157,18 @@ const TribesPage = () => {
 
           <PostCard />
 
-          <div
-                style={{
-                  display: "flex",
-                  justifyContent: "flex-end",
-                  paddingBottom: "100px",
-                }}
-              >
-                <button className={styles.join} onClick={() => mutate()}>
-                  Leave Tribe
-                </button>
-              </div>
+          {/* <div
+            style={{
+              display: "flex",
+              justifyContent: "flex-end",
+              alignItems: "flex-end",
+              paddingBottom: "100px",
+            }}
+          >
+            <button className={styles.join} onClick={() => mutate()}>
+              Leave Tribe
+            </button>
+          </div> */}
         </>
       ) : (
         account &&

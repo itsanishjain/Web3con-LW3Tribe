@@ -99,11 +99,29 @@
 .join {
   font-family: 'Press Start 2P';
   cursor: pointer;
+  /* margin-top: 1rem; */
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: var(--color-theme-white);
+  width: 10rem;
+  height: 2.2rem;
+  background: rgb(180, 58, 58);
+  background: linear-gradient(
+    0deg,
+    rgba(253, 29, 29, 100) 70%,
+    rgba(180, 58, 58, 100) 85%,
+    rgba(255, 255, 255, 100) 100%
+  );
+}
+
+.join1 {
+  font-family: 'Press Start 2P';
+  cursor: pointer;
   margin-top: 1rem;
   text-transform: uppercase;
   font-size: 0.7rem;
   color: var(--color-theme-white);
-  width: 12.5rem;
+  width: 10rem;
   height: 2.2rem;
   background: rgb(180, 58, 58);
   background: linear-gradient(

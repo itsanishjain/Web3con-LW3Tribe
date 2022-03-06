@@ -46,7 +46,7 @@ const Home: NextPage = () => {
 						{address ? (
 							!data ? (
 								<button
-									className={styles.join}
+									className={styles.join1}
 									onClick={() => {
 										router.push('/all-tribes');
 									}}
@@ -55,7 +55,10 @@ const Home: NextPage = () => {
 								</button>
 							) : (
 								<button
-									className={styles.join}
+									className={styles.join1}
+									style={{
+										width: "12.5rem"
+									}}
 									onClick={() => router.push('/my-tribe')}
 								>
 									View Your Tribe
