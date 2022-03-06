@@ -28,10 +28,10 @@ const Home: NextPage = () => {
 	return (
 		<>
 			<Head>
-				<title>Tribes Sample Project</title>
+				<title>Web3Tribes</title>
 				<meta
 					name="description"
-					content="Sample project utilizing tribes module from hyperverse"
+					content="Join communities and meet like-minded people!"
 				/>
 			</Head>
 
