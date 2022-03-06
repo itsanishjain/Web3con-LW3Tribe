@@ -3,61 +3,62 @@ import Nav from '../components/Nav'
 import styles from '../styles/About.module.css'
 
 export default function About() {
-  return (
-    <main>
-      <Nav />
-      <div className={styles.main}>
-        <h1 className={styles.head}>Why we built it? 🖖</h1>
-        <section className={styles.content}>We built Web3-Tribes with one goal in mind: to bring the web3 communities together and help connect as many web3 enthusiasts and developers as possible.
-Web3-Tribes also allows users to have control over their content. Since Web3-Tribes is a decentralized project the users will be the owners of their content and a central authority will not be able to take down their speech, posts etc.
-Web3-Tribes also helps in connecting members from different organizations and DAOs to connect and share their thoughts and experiences on different topics.</section>
-    </div>
-    <div className={styles.team}>
-        <h1 className={styles.head}>Meet the Team 👋</h1>
-        <div className={styles.imgcontainer}>
-            <div className={styles.member}>
-                <img src="abbas2.jpg" alt="" />
-                <span>Content Writer 📝</span>
-                <div className={styles.links}>
-                    <a href="twitter.com" id="twitter">Twitter</a>,
-                    <a href="github.com" id="github">Github</a>    
-                </div>
+    return (
+        <main>
+            <Nav />
+            <div className={styles.main}>
+                <h1 className={styles.head}>Why we built it? 🖖</h1>
+                <section className={styles.content}>We built Web3-Tribes with one goal in mind: to bring the web3 communities together and help connect as many web3 enthusiasts and developers as possible.
+                    Web3-Tribes also allows users to have control over their content. Since Web3-Tribes is a decentralized project the users will be the owners of their content and a central authority will not be able to take down their speech, posts etc.
+                    Web3-Tribes also helps in connecting members from different organizations and DAOs to connect and share their thoughts and experiences on different topics.</section>
             </div>
-            <div className={styles.member}>
-                <img src="Anish.png" alt="" />
-                <span>Head Developer 👑</span>
-                <div className={styles.links}>
-                    <a href="twitter.com" id="twitter">Twitter</a>,
-                    <a href="github.com" id="github">Github</a>  
+            <div className={styles.team}>
+                <h1 className={styles.head}>Meet the Team 👋</h1>
+                <div className={styles.imgcontainer}>
+                    <div className={styles.member}>
+                        <img src="abbas2.jpg" alt="" />
+                        <span>Content Writer 📝</span>
+                        <div className={styles.links}>
+                            <a href="https://twitter.com/KhanAbbas201" id="twitter">Twitter</a>,
+                            <a href="https://github.com/Abbas-Khann" id="github">Github</a>
+                        </div>
+                    </div>
+                    <div className={styles.member}>
+                        <img src="Anish.png" alt="" />
+                        <span>Head Developer 👑</span>
+                        <div className={styles.links}>
+                            <a href="https://twitter.com/itsanishjain" id="twitter">Twitter</a>,
+                            <a href="https://github.com/itsanishjain" id="github">Github</a>
+                        </div>
+                    </div>
+                    <div className={styles.member}>
+                        <img src="Aayush.jpg" alt="" />
+                        <span>Smart Contract Developer 🧠</span>
+                        <div className={styles.links}>
+                            <a href="https://twitter.com/Aayush_gupta_ji" id="twitter">Twitter</a>,
+                            <a href="https://github.com/AAYUSH-GUPTA-coder" id="github">Github</a>
+                        </div>
+                    </div>
+                    <div className={styles.member}>
+                        <img src="Vatsal.jpg" alt="" />
+                        <span>Frontend 🎨</span>
+                        <div className={styles.links}>
+                            <a href="https://twitter.com/theVatsal_eth" id="twitter">Twitter</a>,
+                            <a href="https://github.com/theVatsal-eth
+" id="github">Github</a>
+                        </div>
+                    </div>
+                    <div className={styles.member}>
+                        <img src="yash4.jpg" alt="" />
+                        <span>Frontend 🎨</span>
+                        <div className={styles.links}>
+                            <a href="https://twitter.com/YashSolanki_" id="twitter">Twitter</a>,
+                            <a href="https://github.com/yash-solanki069" id="github">Github</a>
+                        </div>
+                    </div>
                 </div>
+                <span className={styles.head2}>#WAGMI! 🚀</span>
             </div>
-            <div className={styles.member}>
-                <img src="Aayush.jpg" alt="" />
-                <span>Smart Contract Developer 🧠</span>
-                <div className={styles.links}>
-                    <a href="twitter.com" id="twitter">Twitter</a>,
-                    <a href="github.com" id="github">Github</a>    
-                </div>
-            </div>
-            <div className={styles.member}>
-                <img src="Vatsal.jpg" alt="" />
-                <span>Frontend 🎨</span>
-                <div className={styles.links}>
-                    <a href="twitter.com" id="twitter">Twitter</a>,
-                    <a href="github.com" id="github">Github</a>    
-                </div>
-            </div>
-            <div className={styles.member}>
-                <img src="yash4.jpg" alt="" />
-                <span>Frontend 🎨</span>
-                <div className={styles.links}>
-                    <a href="twitter.com" id="twitter">Twitter</a>,
-                    <a href="github.com" id="github">Github</a>   
-                </div>
-            </div>
-        </div>
-    <span className={styles.head2}>#WAGMI! 🚀</span>
-    </div>
-    </main>
-  )
+        </main>
+    )
 }

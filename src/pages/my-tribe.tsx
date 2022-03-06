@@ -84,6 +84,7 @@ const TribesPage = () => {
           <Link href={`/create-post/?tribeId=` + data.id}>
             <a
               style={{
+               
                 border: "1px solid white",
                 borderRadius: "5px",
                 padding: "10px",
@@ -94,6 +95,8 @@ const TribesPage = () => {
                 marginBottom: "1rem",
                 fontFamily: "Press Start 2P",
                 textDecoration: "none",
+                
+               
               }}
             >
               Create Post
