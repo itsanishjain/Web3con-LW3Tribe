@@ -30,7 +30,7 @@ const Nav = () => {
 	return (
 		<nav>
 			<Link href="/" passHref>
-				<a className={styles.logo}>Tribes</a>
+				<a className={styles.logo}>Web3Tribes</a>
 			</Link>
 			<div className={styles.rightNav}>
 				{/* <Link href="/battle">

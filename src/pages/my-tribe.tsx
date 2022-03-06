@@ -67,23 +67,10 @@ const TribesPage = () => {
                 <p className={styles.description}>{data.description}</p>
               </div>
 
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  paddingBottom: "100px",
-                }}
-              >
-                <button className={styles.join} onClick={() => mutate()}>
-                  Leave Tribe
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <Link href="/create-post">
-            <a
+              <Link href="/create-post">
+              <a
               style={{
+                width : "30%",
                 border: "1px solid white",
                 borderRadius: "5px",
                 padding: "10px",
@@ -101,7 +88,54 @@ const TribesPage = () => {
             </a>
           </Link>
 
+              {/* <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  paddingBottom: "100px",
+                }}
+              >
+                <button className={styles.join} onClick={() => mutate()}>
+                  Leave Tribe
+                </button>
+              </div> */}
+            </div>
+          </div>
+
+          {/* <Link href="/create-post">
+            <a
+              style={{
+                width : "10%",
+                border: "1px solid white",
+                borderRadius: "5px",
+                padding: "10px",
+                display: "flex",
+                justifyContent: "center",
+                fontSize: "2rem",
+                fontWeight: "bold",
+                marginBottom: "1rem",
+                fontFamily: "Press Start 2P",
+                textDecoration: "none",
+                
+              }}
+            >
+              Create Post
+            </a>
+          </Link> */}
+
           <PostCard />
+
+          <div
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  paddingBottom: "100px",
+                }}
+              >
+                <button className={styles.join} onClick={() => mutate()}>
+                  Leave Tribe
+                </button>
+              </div>
         </>
       ) : (
         account &&

@@ -39,11 +39,9 @@ const Home: NextPage = () => {
 				<Nav />
 				<div className={styles.hero}>
 					<div className={styles.header}>
-						<h1> Tribes</h1>
+						<h1> Web3Tribes</h1>
 						<p className={styles.about}>
-							An example dapp utilizing the tribes module built on the hyperverse.
-							Tribes allows you to build communities that people can join, leave, or
-							create.
+							Web3Tribes allows you to join communities and find with common interests and goals
 						</p>
 						{address ? (
 							!data ? (
