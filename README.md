@@ -80,4 +80,6 @@ Now comes the fun part where you can actually post whatever you want.
 
 ### A special Thanks to Decentology, FileCoin IPFS And the LW3 Team for helping us in this hackathon.
 
+### [Here's the demonstration video](https://www.youtube.com/watch?v=l9mGVF4_HyE).
+
  <h2 align="center">WAGMI</h2>
